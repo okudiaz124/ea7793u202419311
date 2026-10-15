@@ -1,4 +1,52 @@
-<mat-toolbar>TrailQuest Adventure Camp Management Platform</mat-toolbar>
-<main class="content">
-  <h1>TrailQuest Adventure Camps</h1>
-</main>
+<mat-toolbar class="site-toolbar">
+  <div class="brand">
+    <img src="/assets/logo/trailquest-logo.svg" alt="TrailQuest" width="44" height="44">
+    <span class="brand-title">{{ 'app.title' | translate }}</span>
+  </div>
+
+  <nav class="toolbar-links" [attr.aria-label]="'navigation.main' | translate">
+    <a mat-button routerLink="/home" routerLinkActive="active-link">
+      {{ 'navigation.home' | translate }}
+    </a>
+    <a mat-button routerLink="/reservations/new" routerLinkActive="active-link">
+      {{ 'navigation.new-reservation' | translate }}
+    </a>
+  </nav>
+
+  <span class="toolbar-spacer"></span>
+  <div class="languages" role="group" [attr.aria-label]="'navigation.language' | translate">
+    <button mat-button type="button" (click)="switchLanguage('en')"
+      [attr.aria-pressed]="translate.currentLang() === 'en'">EN</button>
+    <button mat-button type="button" (click)="switchLanguage('es')"
+      [attr.aria-pressed]="translate.currentLang() === 'es'">ES</button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="site-layout">
+  <mat-sidenav #sidebar [mode]="isDesktop() ? 'side' : 'over'"
+    [opened]="isDesktop()" class="site-sidebar">
+    <nav mat-nav-list [attr.aria-label]="'navigation.main' | translate">
+      <a mat-list-item routerLink="/home" routerLinkActive="active-item"
+        (click)="!isDesktop() && sidebar.close()">
+        {{ 'navigation.home' | translate }}
+      </a>
+      <a mat-list-item routerLink="/reservations/new" routerLinkActive="active-item"
+        (click)="!isDesktop() && sidebar.close()">
+        {{ 'navigation.new-reservation' | translate }}
+      </a>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    @if (!isDesktop()) {
+      <div class="mobile-menu-bar">
+        <button mat-button type="button" (click)="sidebar.toggle()"
+          [attr.aria-label]="'navigation.open-menu' | translate">
+          ☰ {{ 'navigation.menu' | translate }}
+        </button>
+      </div>
+    }
+    <main class="page-content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,4 +1,12 @@
 @import '@angular/material/prebuilt-themes/azure-blue.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; background: #f6f8f5; }
+:root {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #21382d;
+  background: #f6f8f5;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { font-family: Roboto, "Helvetica Neue", Arial, sans-serif; }
+.page-heading { color: #1c4d3d; margin: 0 0 8px; font-size: clamp(28px, 3vw, 36px); }
+.page-subtitle { color: #56675d; margin: 0 0 26px; line-height: 1.5; }

@@ -1,0 +1,13 @@
+{
+  "app": {
+    "title": "TrailQuest Adventure Camp Management Platform"
+  },
+  "navigation": {
+    "main": "Main navigation",
+    "home": "Home",
+    "new-reservation": "New Reservation",
+    "language": "Language",
+    "menu": "Menu",
+    "open-menu": "Open navigation menu"
+  }
+}

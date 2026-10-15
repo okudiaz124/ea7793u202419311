@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" role="img" aria-label="TrailQuest mountain and tent">
+  <rect width="84" height="84" rx="20" fill="#245b49"/>
+  <path d="M10 49 30 21l15 21 7-11 23 29H10Z" fill="#d2eee1"/>
+  <path d="M22 64 42 38l20 26Z" fill="#f4bd68"/>
+  <path d="m42 46-8 18h16Z" fill="#245b49"/>
+  <path d="M13 69h58" stroke="#d2eee1" stroke-width="4" stroke-linecap="round"/>
+</svg>

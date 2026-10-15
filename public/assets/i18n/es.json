@@ -1,0 +1,13 @@
+{
+  "app": {
+    "title": "Plataforma de Gestión de Campamentos TrailQuest"
+  },
+  "navigation": {
+    "main": "Navegación principal",
+    "home": "Inicio",
+    "new-reservation": "Nueva Reserva",
+    "language": "Idioma",
+    "menu": "Menú",
+    "open-menu": "Abrir menú de navegación"
+  }
+}
