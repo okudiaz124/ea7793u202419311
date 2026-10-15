@@ -1,0 +1,17 @@
+.not-found {
+  max-width: 700px;
+  padding: 32px;
+  border: 1px solid #d7e4d8;
+  background: #fff;
+  border-radius: 18px;
+}
+.not-found p { color: #56675d; line-height: 1.5; }
+.not-found code {
+  display: block;
+  margin: 15px 0 25px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eff4ef;
+  overflow-wrap: anywhere;
+}
+.primary-action { background: #1c4d3d !important; color: #fff !important; }

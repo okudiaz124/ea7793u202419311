@@ -1,0 +1,10 @@
+<section class="not-found" aria-labelledby="not-found-title">
+  <h1 id="not-found-title" class="page-heading">{{ 'not-found.title' | translate }}</h1>
+  <p>{{ 'not-found.message' | translate }}</p>
+  <code>{{ router.url }}</code>
+  <div>
+    <a mat-flat-button class="primary-action" routerLink="/home">
+      {{ 'not-found.return-home' | translate }}
+    </a>
+  </div>
+</section>

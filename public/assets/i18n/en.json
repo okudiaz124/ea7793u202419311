@@ -28,12 +28,34 @@
     "camping": "Camping",
     "climbing": "Climbing"
   },
+  "reservation": {
+    "title": "New Reservation",
+    "subtitle": "Register Participants at Your Adventure Camp.",
+    "activity-type": "Activity Type",
+    "participant-name": "Participant Name",
+    "participants": "Number of Participants",
+    "current-temperature": "Current Temperature",
+    "weather-loading": "Loading current weather..."
+  },
   "common": {
     "empty": "Empty",
     "loading": "Loading...",
-    "retry": "Retry"
+    "retry": "Retry",
+    "create": "Create",
+    "cancel": "Cancel",
+    "saving": "Saving..."
   },
   "messages": {
-    "camps-load-error": "Could not load camp information. Check the local server."
+    "camps-load-error": "Could not load camp information. Check the local server.",
+    "required": "This field is required.",
+    "positive-participants": "Enter a whole number greater than zero.",
+    "weather-error": "Current weather could not be retrieved. Reservations are disabled.",
+    "no-capacity": "No available places remain for this activity.",
+    "create-error": "The reservation could not be created. Verify the available capacity and try again."
+  },
+  "not-found": {
+    "title": "Page Not Found",
+    "message": "The requested route was not found:",
+    "return-home": "Return to Home"
   }
 }

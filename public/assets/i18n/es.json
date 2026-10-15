@@ -28,12 +28,34 @@
     "camping": "Campamento",
     "climbing": "Escalada"
   },
+  "reservation": {
+    "title": "Nueva Reserva",
+    "subtitle": "Registra participantes en tu campamento de aventura.",
+    "activity-type": "Tipo de Actividad",
+    "participant-name": "Nombre del Participante",
+    "participants": "Número de Participantes",
+    "current-temperature": "Temperatura Actual",
+    "weather-loading": "Consultando el clima actual..."
+  },
   "common": {
     "empty": "Vacío",
     "loading": "Cargando...",
-    "retry": "Reintentar"
+    "retry": "Reintentar",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "saving": "Guardando..."
   },
   "messages": {
-    "camps-load-error": "No se pudo cargar la información de los campamentos. Revisa el servidor local."
+    "camps-load-error": "No se pudo cargar la información de los campamentos. Revisa el servidor local.",
+    "required": "Este campo es obligatorio.",
+    "positive-participants": "Ingresa un número entero mayor que cero.",
+    "weather-error": "No se pudo obtener la temperatura actual. Las reservas están deshabilitadas.",
+    "no-capacity": "No quedan cupos disponibles para esta actividad.",
+    "create-error": "No se pudo crear la reserva. Verifica la capacidad disponible e inténtalo de nuevo."
+  },
+  "not-found": {
+    "title": "Página no encontrada",
+    "message": "No se encontró la ruta solicitada:",
+    "return-home": "Volver a Inicio"
   }
 }
