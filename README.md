@@ -1,6 +1,6 @@
 # TrailQuest Adventure Camps
 
-Angular application for managing adventure camp reservations and capacity.
+Angular application for managing adventure camp reservations and capacity. LOGO CREATED WITH https://editor.method.ac/
 
 ## Requirements
 
