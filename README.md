@@ -1,39 +1,48 @@
 # TrailQuest Adventure Camps
 
-Angular application for managing adventure camp reservations and capacity. LOGO CREATED WITH https://editor.method.ac/
+Adventure camp reservation platform built with Angular and TypeScript.
 
-## Requirements
+## Features
 
-- Node.js and npm
+- Home page with reservation lists and available capacity for each camp.
+- New Reservation form with activity selection and capacity validation.
+- Current camp temperature from Open-Meteo.
+- English and Spanish, with a not-found page.
 
-## Run
+## Stack
 
-Install the packages:
+Angular 22.2.2, TypeScript, Angular Material, ngx-translate, json-server 0.17.4 and Open-Meteo.
+
+## Setup
+
+Requires Node.js 22.22.3 or later in the Node 22 series, or Node.js 24.15.0 or later in the Node 24 series.
 
 ```bash
 npm install
 ```
 
-Start the local API:
+Run the local API in one terminal:
 
 ```bash
 npm run server
 ```
 
-In another terminal, run:
+Run the application in another terminal:
 
 ```bash
 npm start
 ```
 
-The local API runs at http://localhost:3000. Replace `server/db.json` with the provided exam data; its collections are currently empty.
+Application: http://localhost:4200
 
-## Stack
+Local API: http://localhost:3000
 
-Angular 22, TypeScript, Angular Material, ngx-translate and json-server 0.17.4.
+The supplied exam data is already included in `server/db.json`.
 
 ## Authorship
 
 Matthew Shinko Okuhama Diaz — u202419311
 
 Repository: https://github.com/okudiaz124/ea7793u202419311
+
+TrailQuest logo created with https://editor.method.ac/
