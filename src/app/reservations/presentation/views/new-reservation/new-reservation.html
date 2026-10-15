@@ -1,0 +1,85 @@
+<section aria-labelledby="new-reservation-title">
+  <h1 id="new-reservation-title" class="page-heading">{{ 'reservation.title' | translate }}</h1>
+  <p class="page-subtitle">{{ 'reservation.subtitle' | translate }}</p>
+
+  <mat-card class="reservation-card" appearance="outlined">
+    <mat-card-content>
+      @if (store.loading()) {
+        <p role="status">{{ 'common.loading' | translate }}</p>
+      }
+      @if (store.loadError()) {
+        <p class="message-error" role="alert">{{ 'messages.camps-load-error' | translate }}</p>
+      }
+
+      <form class="reservation-form" [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation.activity-type' | translate }}</mat-label>
+          <mat-select formControlName="activityType" required
+            (selectionChange)="selectActivity($event.value)">
+            @for (activity of activities; track activity) {
+              <mat-option [value]="activity">{{ ('activity.' + activity) | translate }}</mat-option>
+            }
+          </mat-select>
+          @if (form.controls.activityType.hasError('required')) {
+            <mat-error>{{ 'messages.required' | translate }}</mat-error>
+          }
+        </mat-form-field>
+
+        @if (selectedCamp(); as camp) {
+          <div class="camp-information">
+            <strong>{{ camp.name }}</strong>
+            <span>{{ 'camp.available-capacity' | translate }}: {{ availableCapacity() }}</span>
+          </div>
+        }
+
+        <div class="weather-information" aria-live="polite">
+          @if (weatherLoading()) {
+            <p role="status">{{ 'reservation.weather-loading' | translate }}</p>
+          } @else if (weatherError()) {
+            <p class="message-error" role="alert">{{ 'messages.weather-error' | translate }}</p>
+          } @else if (temperature() !== null) {
+            <p>{{ 'reservation.current-temperature' | translate }}:
+              <strong>{{ temperature() }} °C</strong>
+            </p>
+          }
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation.participant-name' | translate }}</mat-label>
+          <input matInput type="text" autocomplete="name" required
+            formControlName="participantName">
+          @if (form.controls.participantName.hasError('required')) {
+            <mat-error>{{ 'messages.required' | translate }}</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation.participants' | translate }}</mat-label>
+          <input matInput type="number" min="1" step="1" required
+            formControlName="participants">
+          @if (form.controls.participants.invalid) {
+            <mat-error>{{ 'messages.positive-participants' | translate }}</mat-error>
+          }
+        </mat-form-field>
+
+        @if (selectedCamp() && availableCapacity() === 0) {
+          <p class="message-error" role="alert">{{ 'messages.no-capacity' | translate }}</p>
+        }
+        @if (formError()) {
+          <p class="message-error" role="alert">{{ 'messages.create-error' | translate }}</p>
+        }
+
+        <div class="form-actions">
+          <button mat-flat-button type="submit" class="primary-action"
+            [disabled]="saving() || store.loading() || store.loadError() || weatherLoading() ||
+              weatherError() || temperature() === null || availableCapacity() === 0">
+            {{ saving() ? ('common.saving' | translate) : ('common.create' | translate) }}
+          </button>
+          <button mat-stroked-button type="button" (click)="cancel()">
+            {{ 'common.cancel' | translate }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

@@ -1,0 +1,39 @@
+.reservation-card {
+  max-width: 730px;
+  border: 1px solid #d9e3d8;
+  border-radius: 18px;
+  background: #fff;
+  padding: 14px;
+}
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+}
+mat-form-field { width: 100%; }
+.camp-information {
+  background: #e9f3ec;
+  color: #1c4d3d;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+.weather-information { min-height: 38px; color: #315c44; }
+.weather-information p { margin: 4px 0; }
+.message-error {
+  color: #852d1d;
+  background: #fff0eb;
+  padding: 12px 14px;
+  border-radius: 9px;
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+.primary-action { background: #1c4d3d !important; color: #fff !important; }
