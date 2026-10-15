@@ -9,5 +9,31 @@
     "language": "Idioma",
     "menu": "Menú",
     "open-menu": "Abrir menú de navegación"
+  },
+  "home": {
+    "title": "Inicio",
+    "subtitle": "Reservas inteligentes y gestión de capacidad para campamentos de aventura.",
+    "my-adventure-camps": "Mis Campamentos de Aventura",
+    "no-camps": "No hay campamentos disponibles."
+  },
+  "camp": {
+    "reservations": "Reservas",
+    "participants": "participantes",
+    "total-participants": "Total de Participantes",
+    "available-capacity": "Capacidad Disponible"
+  },
+  "activity": {
+    "hiking": "Senderismo",
+    "trekking": "Trekking",
+    "camping": "Campamento",
+    "climbing": "Escalada"
+  },
+  "common": {
+    "empty": "Vacío",
+    "loading": "Cargando...",
+    "retry": "Reintentar"
+  },
+  "messages": {
+    "camps-load-error": "No se pudo cargar la información de los campamentos. Revisa el servidor local."
   }
 }

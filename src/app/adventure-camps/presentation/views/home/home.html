@@ -1,0 +1,36 @@
+<section aria-labelledby="home-title">
+  <div class="home-header">
+    <div>
+      <h1 id="home-title" class="page-heading">{{ 'home.title' | translate }}</h1>
+      <p class="page-subtitle">{{ 'home.subtitle' | translate }}</p>
+    </div>
+    <a mat-flat-button class="new-reservation-link" routerLink="/reservations/new">
+      {{ 'navigation.new-reservation' | translate }}
+    </a>
+  </div>
+
+  <h2 class="section-title">{{ 'home.my-adventure-camps' | translate }}</h2>
+
+  @if (store.loading()) {
+    <p role="status">{{ 'common.loading' | translate }}</p>
+  } @else if (store.loadError()) {
+    <div class="feedback-message" role="alert">
+      {{ 'messages.camps-load-error' | translate }}
+      <button mat-button type="button" (click)="store.load()">
+        {{ 'common.retry' | translate }}
+      </button>
+    </div>
+  } @else if (store.camps().length === 0) {
+    <p class="empty-camps">{{ 'home.no-camps' | translate }}</p>
+  } @else {
+    <div class="camp-grid" role="list">
+      @for (camp of store.camps(); track camp.id) {
+        <div role="listitem">
+          <app-adventure-camp-summary
+            [camp]="camp"
+            [reservations]="store.reservationsFor(camp)" />
+        </div>
+      }
+    </div>
+  }
+</section>

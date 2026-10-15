@@ -9,5 +9,31 @@
     "language": "Language",
     "menu": "Menu",
     "open-menu": "Open navigation menu"
+  },
+  "home": {
+    "title": "Home",
+    "subtitle": "Smart Reservations and Capacity Management for Adventure Camps.",
+    "my-adventure-camps": "My Adventure Camps",
+    "no-camps": "No adventure camps are available."
+  },
+  "camp": {
+    "reservations": "Reservations",
+    "participants": "participants",
+    "total-participants": "Total Participants",
+    "available-capacity": "Available Capacity"
+  },
+  "activity": {
+    "hiking": "Hiking",
+    "trekking": "Trekking",
+    "camping": "Camping",
+    "climbing": "Climbing"
+  },
+  "common": {
+    "empty": "Empty",
+    "loading": "Loading...",
+    "retry": "Retry"
+  },
+  "messages": {
+    "camps-load-error": "Could not load camp information. Check the local server."
   }
 }

@@ -1,0 +1,34 @@
+<mat-card class="camp-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ camp().name }}</mat-card-title>
+    <mat-card-subtitle>{{ ('activity.' + camp().activityType) | translate }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="camp-content">
+    @if (reservations().length === 0) {
+      <p class="empty-records">{{ 'common.empty' | translate }}</p>
+    } @else {
+      <ul class="reservation-list" [attr.aria-label]="'camp.reservations' | translate">
+        @for (reservation of reservations(); track reservation.id) {
+          <li>
+            <span>{{ reservation.participantName }}</span>
+            <span class="participant-amount">
+              {{ reservation.participants }} {{ 'camp.participants' | translate }}
+            </span>
+          </li>
+        }
+      </ul>
+    }
+  </mat-card-content>
+
+  <mat-card-footer class="camp-footer">
+    <div>
+      <span>{{ 'camp.total-participants' | translate }}</span>
+      <strong>{{ totalParticipants() }}</strong>
+    </div>
+    <div>
+      <span>{{ 'camp.available-capacity' | translate }}</span>
+      <strong>{{ availableCapacity() }}</strong>
+    </div>
+  </mat-card-footer>
+</mat-card>
