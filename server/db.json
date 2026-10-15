@@ -1,4 +1,74 @@
 {
-  "adventure-camps": [],
-  "reservations": []
+  "adventure-camps": [
+    {
+      "id": 1,
+      "name": "TrailQuest Lomas de Lachay",
+      "activityType": "hiking",
+      "capacity": 35,
+      "latitude": -11.356,
+      "longitude": -77.372
+    },
+    {
+      "id": 2,
+      "name": "TrailQuest Marcahuasi",
+      "activityType": "trekking",
+      "capacity": 40,
+      "latitude": -11.757,
+      "longitude": -76.597
+    },
+    {
+      "id": 3,
+      "name": "TrailQuest Lunahuana",
+      "activityType": "camping",
+      "capacity": 30,
+      "latitude": -12.961,
+      "longitude": -76.14
+    },
+    {
+      "id": 4,
+      "name": "TrailQuest San Jeronimo",
+      "activityType": "climbing",
+      "capacity": 25,
+      "latitude": -12.105,
+      "longitude": -76.942
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "adventureCampId": 1,
+      "activityType": "hiking",
+      "participantName": "Ana Torres",
+      "participants": 12,
+      "weatherTemperature": 19.5,
+      "reservedAt": "2026-10-10T09:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "adventureCampId": 1,
+      "activityType": "hiking",
+      "participantName": "Luis Mendoza",
+      "participants": 8,
+      "weatherTemperature": 20.1,
+      "reservedAt": "2026-10-11T10:30:00-05:00"
+    },
+    {
+      "id": 3,
+      "adventureCampId": 2,
+      "activityType": "trekking",
+      "participantName": "Carla Salazar",
+      "participants": 15,
+      "weatherTemperature": 14.2,
+      "reservedAt": "2026-10-11T11:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "adventureCampId": 3,
+      "activityType": "camping",
+      "participantName": "Mario Rojas",
+      "participants": 30,
+      "weatherTemperature": 23.4,
+      "reservedAt": "2026-10-12T08:30:00-05:00"
+    }
+  ]
 }
