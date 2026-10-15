@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { NewReservation, Reservation } from '../domain/model/reservation.entity';
+import { ReservationAssembler } from './reservation.assembler';
+import { ReservationResource } from './reservation.resource';
 
 /** Reads and creates camp reservations through the local API. */
 @Injectable({ providedIn: 'root' })
@@ -11,10 +13,15 @@ export class ReservationsApiService {
   private readonly endpoint = `${environment.apiBaseUrl}/reservations`;
 
   list(): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(this.endpoint);
+    return this.http.get<ReservationResource[]>(this.endpoint).pipe(
+      map(resources => resources.map(ReservationAssembler.toEntity)),
+    );
   }
 
   create(reservation: NewReservation): Observable<Reservation> {
-    return this.http.post<Reservation>(this.endpoint, reservation);
+    return this.http.post<ReservationResource>(
+      this.endpoint,
+      ReservationAssembler.toRequest(reservation),
+    ).pipe(map(ReservationAssembler.toEntity));
   }
 }
